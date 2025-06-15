@@ -108,7 +108,15 @@ option((SkillBehaviorControl) PlayBall,
           break;
         case SkillRequest::shoot:
         default:
-          KickAtGoal();
+          // Qui è dove modificare i comportamenti legati alla palla
+
+          // Nulla vieta di avere comportamenti modificati sia qui che in SkillBehaviorControl.cpp
+          
+          // Se il numero di maglia del robot è 5, allora esegui il comportamento modificato, altrimenti fai il comportamento standard
+          // if(theGameState.playerNumber == 5)
+          //   FollowAndKickBall();       // Comportamento modificato
+          // else
+            KickAtGoal();       // Comportamento standard
           break;
       }
     }

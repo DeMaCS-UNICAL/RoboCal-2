@@ -115,13 +115,23 @@ void SkillBehaviorControl::update(ActivationGraph&)
                      theRobotHealth.location +
                      " location.").c_str(), true, 0.9f);
   }
-
+  
   beginFrame(theFrameInfo.time);
-  OptionInfos::Option root = static_cast<OptionInfos::Option>(TypeRegistry::getEnumValue(typeid(OptionInfos::Option).name(), "PlaySoccer"));
+  OptionInfos::Option root;
+
+  // Affinché il comportamento del robot sia diverso da quello normale (es: per provare a eseguire WalkBetweenTheLines), bisogna
+  // modificare "root" in modo che abbia, come nome, quello del comportamento che si vuole eseguire (vedi sotto per esempio)
+  // Se il comportamento è in qualche modo legato alla palla, bisogna modificare il file PlayBall.cpp
+
+  // Per far sì che solo determinati giocatori utilizzino un comportamento di default e altri ne utilizzino un altro, basta
+  // aggiungere un if che controlli su quale giocatore (identificato dal numero di maglia) applicare il comportamento root.
+  // if(theGameState.playerNumber == 5)
+  //   root = static_cast<OptionInfos::Option>(TypeRegistry::getEnumValue(typeid(OptionInfos::Option).name(), "FollowTeammate"));    // Comportamento modificato
+  // else
+    root = static_cast<OptionInfos::Option>(TypeRegistry::getEnumValue(typeid(OptionInfos::Option).name(), "PlaySoccer"));    // Comportamento standard
   MODIFY("module:SkillBehaviorControl:root", root);
   execute(root);
   endFrame();
-
   theLibCheck.performCheck();
 }
 
