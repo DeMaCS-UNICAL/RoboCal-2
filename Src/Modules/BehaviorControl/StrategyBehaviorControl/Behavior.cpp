@@ -776,6 +776,21 @@ void Behavior::assignRoles(std::vector<Agent>& agents, Agent& self, const std::v
 {
   if(theGameState.isPlaying())
   {
+    // Assegna alla squadra nera solo posizioni difensive, mentre all'altra assegna le posizioni normalmente
+    // if(theGameState.color() == Settings::TeamColor::black){
+    //   for(Agent& agent : agents)
+    //     agent.nextRole = agent.isGoalkeeper ?
+    //                        PositionRole::toRole(PositionRole::goalkeeper) :
+    //                        PositionRole::toRole(PositionRole::defender);
+    // }
+    // else{
+    //   // By default, assign everyone to their position role.
+    //   for(Agent& agent : agents)
+    //     agent.nextRole = PositionRole::toRole(PositionRole::fromPosition(agent.position));
+
+    //   determineActiveAgent(self, otherAgents, true);
+    // }
+
     // By default, assign everyone to their position role.
     for(Agent& agent : agents)
       agent.nextRole = PositionRole::toRole(PositionRole::fromPosition(agent.position));
