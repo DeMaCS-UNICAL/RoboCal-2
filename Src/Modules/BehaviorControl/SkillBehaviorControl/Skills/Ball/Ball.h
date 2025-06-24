@@ -96,11 +96,14 @@ option(PlayBall);
 /**  Skill for dueling an opponent. */
 option(Zweikampf);
 
-/** Skill che fa seguire la palla e la fa calciare */
+/** Skill che fa seguire la palla e la fa calciare. */
 option(FollowAndKickBall);
 
-/** Skill che fa seguire un compagno di squadra */
+/** Skill che fa seguire un compagno di squadra. */
 option(FollowTeammate);
 
-/** Skill che fa camminare un robot tra le linee di fallo laterali */
+/** Skill che fa camminare un robot tra le linee di fallo laterali. */
 option(WalkBetweenTheLines);
+
+/** Skill che fa attuare un triangolare. */
+option(Triangle);

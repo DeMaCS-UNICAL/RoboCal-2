@@ -1,7 +1,7 @@
 /**
  *  @file FollowTeammate.cpp
  * 
- * Questo file implementa una skill che, dato un numero di maglia di un giocatore, viene fatto seguire
+ * Questo file implementa una skill che, dato un numero di maglia di un giocatore, viene fatto seguire.
  * 
  * @author Giuseppe Mattia Mezzotero
  */

@@ -95,6 +95,13 @@ option((SkillBehaviorControl) PlayBall,
     }
     action
     {
+      // Stampe per controllare di che squadra (ovvero il colore della maglia) siano i vari giocatori
+      // if(theGameState.color() == Settings::TeamColor::red){
+      //   OUTPUT_TEXT(theGameState.playerNumber <<": Squadra avversaria");
+      // }
+      // else{
+      //   OUTPUT_TEXT(theGameState.playerNumber <<": Squadra propria");
+      // }
       switch(theSkillRequest.skill)
       {
         case SkillRequest::pass:
@@ -107,14 +114,14 @@ option((SkillBehaviorControl) PlayBall,
           ClearBall();
           break;
         case SkillRequest::shoot:
-        default:
+        default:  
           // Qui è dove modificare i comportamenti legati alla palla
 
           // Nulla vieta di avere comportamenti modificati sia qui che in SkillBehaviorControl.cpp
           
           // Se il numero di maglia del robot è 5, allora esegui il comportamento modificato, altrimenti fai il comportamento standard
           // if(theGameState.playerNumber == 5)
-          //   FollowAndKickBall();       // Comportamento modificato
+          //   Triangle();       // Comportamento modificato
           // else
             KickAtGoal();       // Comportamento standard
           break;
@@ -167,3 +174,4 @@ option((SkillBehaviorControl) PlayBall,
     }
   }
 }
+

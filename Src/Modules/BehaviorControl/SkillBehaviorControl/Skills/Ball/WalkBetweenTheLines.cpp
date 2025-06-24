@@ -2,7 +2,7 @@
  * @file WalkBetweenTheLines.cpp 
  * 
  * Questo file implementa una skill che fa camminare un robot tra le due linee di fallo laterali 
- * (raggiunge la linea di sinistra, si gira, raggiunge quella di destra, si gira, e così via)
+ * (raggiunge la linea di sinistra, si gira, raggiunge quella di destra, si gira, e così via).
  * 
  * @author Giuseppe Mattia Mezzotero
  */
