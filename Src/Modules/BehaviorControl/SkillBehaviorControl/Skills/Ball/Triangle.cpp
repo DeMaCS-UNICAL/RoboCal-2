@@ -1,5 +1,5 @@
 /**
- * @file Triangle._cpp
+ * @file Triangle.cpp
  * 
  * Questo file implementa una skill che fa passare la palla in maniera triangolare 
  * tra i giocatori della stessa squadra.
