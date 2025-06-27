@@ -23,7 +23,6 @@ option((SkillBehaviorControl) Triangle){
             // ordinato, mentre mates lo sarà più avanti
             std::vector<const Teammate*> mates;
             for(const Teammate& t : theTeamData.teammates)
-                if(t.number != theGameState.playerNumber) // Escludi me stesso
                     mates.push_back(&t);
 
             // Ordina i giocatori in modo crescente in base alla distanza dalla palla

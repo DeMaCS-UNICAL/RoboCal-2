@@ -9,8 +9,8 @@
 #include "SkillBehaviorControl.h"
 
 option((SkillBehaviorControl) FollowTeammate, 
-        vars((Vector2f)(Vector2f::Zero()) teammatePosition)     // Utilizza la variabile teammatePosition (la posizione del compagno di squadra)
-    ){ 
+        vars((const GlobalTeammatesModel::TeammateEstimate*)(nullptr) teammate,     // Utilizza le variabili teammate (il compagno di squadra)
+             (Vector2f)(Vector2f::Zero()) teammatePosition)){       // e teammatePosition (la posizione del compagno di squadra)
 
 
     // Con questa funzione, assegna alle variabili teammate e teammatePosition, rispettivamente, 
@@ -18,11 +18,13 @@ option((SkillBehaviorControl) FollowTeammate,
     // La funzione è quasi identica a quella in PassToTeammate.cpp alla riga 101
     const auto setTeammate = [&]
     {
+    teammate = nullptr;
     teammatePosition = Vector2f::Zero();
     for(const auto& t : theGlobalTeammatesModel.teammates)
         {
             if(t.playerNumber == 2)         // Cambiare il numero di maglia del giocatore da seguire qui
             {
+                teammate = &t;
                 teammatePosition = teammate->pose.translation;
                 break;
             }
