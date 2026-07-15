@@ -28,3 +28,6 @@ option(DemoSoccer);
 
 /** Questo skill fa camminare il robot lungo un quadrato (esercizio didattico). */
 option(DemoWalkSquare);
+
+/** Questa skill mette attaccante e portiere uno contro l'altro (esercizio didattico). */
+option(DemoStrikerVSKeeper);

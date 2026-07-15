@@ -19,6 +19,8 @@ option((SkillBehaviorControl) HandleAnyPlaceDemo)
           goto posing;
         case LibDemo::walkSquare:
           goto walkSquare;
+        case LibDemo::strikerVsKeeper:
+          goto strikerVsKeeper;
       }
     }
   }
@@ -61,6 +63,13 @@ option((SkillBehaviorControl) HandleAnyPlaceDemo)
     action
     {
       DemoWalkSquare();
+    }
+  }
+  state(strikerVsKeeper)
+  {
+    action
+    {
+      DemoStrikerVSKeeper();
     }
   }
 }

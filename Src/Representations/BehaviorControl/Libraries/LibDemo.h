@@ -21,6 +21,7 @@ STREAMABLE(LibDemo,
     talking,
     posing,
     walkSquare,
+    strikerVsKeeper,
   });
 
   using StdVectorDemoGameState = std::vector<LibDemo::DemoGameState>,
