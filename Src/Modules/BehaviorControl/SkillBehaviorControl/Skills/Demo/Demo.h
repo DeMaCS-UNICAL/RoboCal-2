@@ -25,3 +25,6 @@ option(DemoWave);
 
 /** This skill makes the robot play "soccer" in a public demo. */
 option(DemoSoccer);
+
+/** Questo skill fa camminare il robot lungo un quadrato (esercizio didattico). */
+option(DemoWalkSquare);

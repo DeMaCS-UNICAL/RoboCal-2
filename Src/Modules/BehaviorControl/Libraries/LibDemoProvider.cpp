@@ -34,6 +34,9 @@ void LibDemoProvider::update(LibDemo& libDemo)
         case LibDemo::DemoGameState::posing:
           SystemCall::say("Posing");
           break;
+        case LibDemo::DemoGameState::walkSquare:
+          SystemCall::say("Walk square");
+          break;
       }
       lastSwitch = theFrameInfo.time;
     }
