@@ -1,31 +1,20 @@
-# tempo di simulazione
-st on
-
-# applica a TUTTI i robot (portiere + attaccante)
-robot all
-
-# moduli per il simulatore (come AnyPlaceDemo)
-for Lower Upper mr CameraImage LogDataProvider
-for Lower Upper mr CameraInfo LogDataProvider
-for Lower Upper mr FrameInfo LogDataProvider
-for Motion mr FrameInfo LogDataProvider
-for Motion mr FsrSensorData LogDataProvider
-for Motion mr JointSensorData LogDataProvider
-for Motion mr KeyStates LogDataProvider
-for Motion mr RawInertialSensorData LogDataProvider
-mr JPEGImage off
-
-dr module:GameStateProvider:active
-
-call ../Includes/DebugResponses
-
-# viste (incluso behavior)
-call ../Includes/Views
+# Percezione oracle (percezioni perfette -> localizzazione accurata).
+# Funziona perche' lo scenario DemoDuel eredita i moduli da Default.
+call ../Includes/PerceptOracle
 
 # gol diretti permessi
 ar directGoals on
 
-# Chest (Shift+Ctrl+G) - preme
+# Drill custom (non partita): il GameController NON deve penalizzare/riposizionare i robot.
+ar placePlayers off
+ar placeBall off
+ar penalizeLeavingTheField off
+ar penalizeIllegalPosition off
+ar penalizeIllegalPositionInSet off
+
+robot all
+
+# Chest (Shift+Ctrl+G) - preme (avvia: premi due volte per andare in playing)
 jc press 7 set representation:KeyStates pressed = { headFront = false; headMiddle = false; headRear = false; lHandBack = false; lHandLeft = false; lHandRight = false; rHandBack = false; rHandLeft = false; rHandRight = false; lFootLeft = false; lFootRight = false; rFootLeft = false; rFootRight = false; chest = true; };
 # Chest (Shift+Ctrl+G) - rilascia
 jc release 7 set representation:KeyStates pressed = { headFront = false; headMiddle = false; headRear = false; lHandBack = false; lHandLeft = false; lHandRight = false; rHandBack = false; rHandLeft = false; rHandRight = false; lFootLeft = false; lFootRight = false; rFootLeft = false; rFootRight = false; chest = false; };
@@ -36,4 +25,3 @@ jc release 25 set representation:KeyStates pressed = { headFront = false; headMi
 
 echo Shift+Ctrl+G: Chest (avvia: premi due volte)
 echo Shift+Ctrl+Y: Bumper piede (cambia demo)
-

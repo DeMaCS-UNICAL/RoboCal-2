@@ -5,17 +5,17 @@
   <Include href="../Includes/Field2020SPL.rsi3"/>
 
   <Compound name="robots">
-    <!-- PORTIERE: B-Human numero 1 -> isGoalkeeper. Davanti alla propria porta (lato -x). -->
+    <!-- PORTIERE: B-Human numero 1 -> isGoalkeeper. Messo nella porta AVVERSARIA (+x), dove tira l'attaccante. -->
     <Body ref="Nao" name="robot1">
-      <Translation x="-4.0" z="320mm"/>
-      <Rotation z="0degree"/>
+      <Translation x="4.0" z="320mm"/>
+      <Rotation z="180degree"/>       <!-- guarda verso -x, cioe' verso il campo/attaccante -->
       <Set name="TeamColor" value="purple"/>
     </Body>
-    <!-- ATTACCANTE: B-Team numero 5. Tira verso la porta B-Human (-x). -->
-    <Body ref="Nao" name="robot25">
-      <Translation x="-1.0" z="320mm"/>
-      <Rotation z="180degree"/>
-      <Set name="TeamColor" value="red"/>
+    <!-- ATTACCANTE: B-Human numero 5 (COMPAGNO del portiere). Attacca la porta avversaria (+x) = verso il portiere. -->
+    <Body ref="Nao" name="robot5">
+      <Translation x="1.0" z="320mm"/>
+      <Rotation z="0degree"/>          <!-- guarda verso +x, cioe' verso la porta avversaria/portiere -->
+      <Set name="TeamColor" value="black"/>
     </Body>
   </Compound>
 
@@ -41,14 +41,14 @@
 
     <Compound name="balls">
       <Body ref="ball">
-        <Translation x="-1.5" z="1m"/>
+        <Translation x="1.5" z="1m"/>
       </Body>
     </Compound>
 
     <Compound ref="field"/>
 
     <Compound name="scenarios">
-      <Compound name="AnyPlaceDemo"/>
+      <Compound name="DemoDuel"/>
     </Compound>
 
   </Scene>
