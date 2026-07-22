@@ -5,6 +5,10 @@ call ../Includes/PerceptOracle
 # gol diretti permessi
 ar directGoals on
 
+# Drill custom: niente rilevamento gol/rimessa -> lo stato resta PLAYING.
+# Senza questo, il gol manda il gioco in READY e HandleGameState sostituisce la demo.
+ar ballOut off
+
 # Drill custom (non partita): il GameController NON deve penalizzare/riposizionare i robot.
 ar placePlayers off
 ar placeBall off

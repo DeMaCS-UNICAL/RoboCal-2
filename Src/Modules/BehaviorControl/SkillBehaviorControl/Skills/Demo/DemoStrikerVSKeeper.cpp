@@ -81,10 +81,10 @@
         // Palla fuori dall'area di rigore -> il portiere ha finito di passare:
         // vai a recuperarla e ritira.
         if(state_time > 1000 &&
-           theFieldBall.ballWasSeen(1000) &&
+          theFieldBall.ballWasSeen(1000) &&
            !theLibPosition.isInOpponentPenaltyArea(theFieldBall.positionOnField))
           goto striker;
-      }
+        }
       action
       {
         LookAtBall();
@@ -125,8 +125,14 @@
            theFieldBall.positionOnField.x() < theFieldDimensions.xPosOwnGoalLine)
           goto goal;
         // intervento concluso o pallone non piu' intercettabile -> va a rispedire la palla
-        if(action_done || !theFieldInterceptBall.interceptBall)
+        if(action_done)
           goto keeperReturn;
+        
+        if(theFieldBall.ballWasSeen(500) &&
+           theFieldBall.positionRelative.norm() < 700.f)
+        {
+          goto keeperReturn;
+        }
       }
       action
       {
@@ -160,7 +166,7 @@
            theFieldBall.ballWasSeen(1000) &&
            !theLibPosition.isInOwnPenaltyArea(theFieldBall.positionOnField))
           goto keeperGoHome;
-      }
+        }
       action
       {
         LookAtBall();
