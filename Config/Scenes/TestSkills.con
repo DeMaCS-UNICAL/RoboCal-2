@@ -1,0 +1,18 @@
+call Includes/Normal
+
+# all views are defined in another script
+call Includes/Views
+
+# Disabilitiamo l'AutoReferee in modo che il robot parta subito in stato PLAYING
+ar off
+gc playing
+
+# press any key to activate the joystick
+jc press 1 call Includes/Joystick
+jc press 2 call Includes/Joystick
+jc press 3 call Includes/Joystick
+jc press 4 call Includes/Joystick
+
+# Attiva l'opzione HandleMyExercises su tutti i robot
+robot all
+set module:SkillBehaviorControl:root HandleMyExercises

@@ -34,7 +34,7 @@ class LibDemoProvider : public LibDemoProviderBase
 {
   void update(LibDemo& libDemo) override;
 
-  LibDemo::DemoGameState demoGameState = LibDemo::DemoGameState::soccer;
+  LibDemo::DemoGameState demoGameState = LibDemo::DemoGameState::patrol;
   unsigned lastSwitch = 0;
   bool lastBumperState = false;
   unsigned demoGameStateIndex = 0;

@@ -17,6 +17,8 @@ option((SkillBehaviorControl) HandleAnyPlaceDemo)
           goto talking;
         case LibDemo::posing:
           goto posing;
+        case LibDemo::patrol:
+          goto patrol;
       }
     }
   }
@@ -51,6 +53,14 @@ option((SkillBehaviorControl) HandleAnyPlaceDemo)
     {
       theRefereeDetectionRequest.detectReferee = true;
       DemoPose();
+    }
+  }
+
+  state(patrol)
+  {
+    action
+    {
+      DemoPatrol();
     }
   }
 }

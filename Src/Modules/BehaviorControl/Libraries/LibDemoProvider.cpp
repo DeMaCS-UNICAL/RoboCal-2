@@ -34,6 +34,9 @@ void LibDemoProvider::update(LibDemo& libDemo)
         case LibDemo::DemoGameState::posing:
           SystemCall::say("Posing");
           break;
+        case LibDemo::DemoGameState::patrol:
+          SystemCall::say("Patrol");
+          break;
       }
       lastSwitch = theFrameInfo.time;
     }

@@ -92,13 +92,13 @@
         "id": "configuration",
         "type": "command",
         "command": "cpptools.activeConfigCustomVariable",
-        "args": "configuration",
+        "args": "configuration"
       },
       {
         "id": "program",
         "type": "command",
         "command": "cpptools.activeConfigCustomVariable",
-        "args": "program",
+        "args": "program"
       }
     ],
     "configurations": [
@@ -107,6 +107,9 @@
         "type": "cppdbg",
         "request": "launch",
         "program": "${input:program}",
+        "args": [
+          "${workspaceFolder}/Config/Scenes/BH.ros3"
+        ],
         "cwd": "${workspaceFolder}",
         "preLaunchTask": "B-Human",
         "logging": {

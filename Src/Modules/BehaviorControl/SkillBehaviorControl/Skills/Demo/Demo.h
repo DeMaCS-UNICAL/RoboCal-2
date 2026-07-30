@@ -25,3 +25,7 @@ option(DemoWave);
 
 /** This skill makes the robot play "soccer" in a public demo. */
 option(DemoSoccer);
+
+option(DemoPatrol);
+option(DemoFigureEight);
+option(DemoFollowBall);

@@ -14,6 +14,7 @@ option(HandleBallHolding);
 option(HandleBestKickLeaderboard);
 option(HandleFastestWalkLeaderboard);
 option(HandleGameState);
+option(HandleMyExercises);
 option(HandleGoalkeeperCatchBall);
 option(HandleIllegalAreas);
 option(HandleMostPassesLeaderboard);

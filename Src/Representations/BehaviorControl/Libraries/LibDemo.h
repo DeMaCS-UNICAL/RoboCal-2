@@ -20,6 +20,7 @@ STREAMABLE(LibDemo,
     waving,
     talking,
     posing,
+    patrol,
   });
 
   using StdVectorDemoGameState = std::vector<LibDemo::DemoGameState>,
